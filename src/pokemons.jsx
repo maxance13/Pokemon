@@ -20,7 +20,7 @@ const PokemonName = () => {
 
   const addPokemonToTeam = () => {
     if (team.length < 6) {
-      setTeam([...team, pokemonName[" Name"]]);
+      setTeam([...team, pokemonName[' Name']]);
     }
   };
 
@@ -64,7 +64,7 @@ const PokemonName = () => {
     <div className="team-info">
       <h2 className="team">Equipe</h2>
       <h3>{team.length}/6</h3>
-      <h4>{team[0]}</h4>
+      <h4>{team[0]}</h4>   
       <ul>
         {team.map((pokemon, index) => (
           <li key={index}>
