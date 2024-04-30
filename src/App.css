@@ -3,12 +3,16 @@
 }
 
 .App-body {
-  background-color: #282c34;
+  background-image: url(../public/pokemonfond.jpg);
+  background-size: cover;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.pokemon{
+.pokemon {
   display: flex;
   justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
 }
