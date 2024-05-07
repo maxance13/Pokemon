@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HealthBar from "./barDeVie";
 
+const apiUrl = process.env.REACT_APP_API_URL;
 const PokemonName = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [team, setTeam] = useState([]);
@@ -12,7 +13,7 @@ const PokemonName = () => {
   }, []);
 
   const fetchRandomPokemon = async () => {
-    const response = await fetch("http://localhost:3001/random");
+    const response = await fetch(`${apiUrl}/random`);
     const data = await response.json();
     setPokemonName(data);
     setPokemonHealth(data.HP);
@@ -20,7 +21,7 @@ const PokemonName = () => {
 
   const addPokemonToTeam = () => {
     if (team.length < 6) {
-      setTeam([...team, pokemonName[' Name']]);
+      setTeam([...team, pokemonName[" Name"]]);
     }
   };
 
@@ -36,7 +37,7 @@ const PokemonName = () => {
   };
 
   const createEnemyPokemon = async () => {
-    const response = await fetch("http://localhost:3001/random");
+    const response = await fetch(`${apiUrl}/random`);
     const data = await response.json();
     setEnemyPokemon(data);
   };
@@ -64,7 +65,7 @@ const PokemonName = () => {
     <div className="team-info">
       <h2 className="team">Equipe</h2>
       <h3>{team.length}/6</h3>
-      <h4>{team[0]}</h4>   
+      <h4>{team[0]}</h4>
       <ul>
         {team.map((pokemon, index) => (
           <li key={index}>
