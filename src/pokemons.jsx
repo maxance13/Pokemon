@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HealthBar from "./barDeVie";
 
-const apiUrl = "https://express-pokemon.vercel.app";
+const apiUrl = process.env.REACT_APP_API_URL;
 const PokemonName = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [team, setTeam] = useState([]);
